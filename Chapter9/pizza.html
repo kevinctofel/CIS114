@@ -23,9 +23,9 @@
     Your Information
     <ul>
       <li>Name: <input type="text" name="customername"></li>
-      <li>Address: <input type="text" name="customeraddress"></li>
-      <li>Telephone Number: <input type="tel" name="customerphone"></li>
-      <li>Email: <input type="email" name="customeremail"></li>
+      <li>Address: <input type="text" name="address"></li>
+      <li>Telephone Number: <input type="tel" name="telephone"></li>
+      <li>Email: <input type="email" name="email"></li>
       <li>Delivery instructions:</li>
       <textarea name="instructions" rows="4" cols="60" maxlength="400"
         placeholder="No more than 400 characters long, please."></textarea>
@@ -38,25 +38,33 @@
 
         <p>Crust <em>(Choose one)</em>:</p>
         <ul>
-          <li>Classic white</li>
-          <li>Multigrain</li>
-          <li>Cheese-stuffed crust</li>
-          <li>Gluten-free</li>
+          <li><input type="radio" name="crust" value="white"> Classic White</li>
+          <li><input type="radio" name="crust" value="multigrain"> Multigrain</li>
+          <li><input type="radio" name="crust" value="stuffed"> Cheese-stuffed crust</li>
+          <li><input type="radio" name="crust" value="glutenfree"> Gluten-free</li>
         </ul>
 
         <p>Toppings <em>(Choose as many as you want)</em>:</p>
         <ul>
-          <li>Red sauce</li>
-          <li>White sauce</li>
-          <li>Mozzarella Cheese</li>
-          <li>Pepperoni</li>
-          <li>Mushrooms</li>
-          <li>Peppers</li>
-          <li>Anchovies</li>
+          <li><input type="checkbox" name="toppings[]" value="red" checked> Red sauce</li>
+          <li><input type="checkbox" name="toppings[]" value="white"> White sauce</li>
+          <li><input type="checkbox" name="toppings[]" value="mozzarella"> Mozzarella Cheese</li>
+          <li><input type="checkbox" name="toppings[]" value="pepperoni"> Pepperoni</li>
+          <li><input type="checkbox" name="toppings[]" value="shrooms"> Mushrooms</li>
+          <li><input type="checkbox" name="toppings[]" value="peppers"> Peppers</li>
+          <li><input type="checkbox" name="toppings[]" value="anchovies"> Anchovies</li>
         </ul>
 
         <p>Number</p>
-        <p>How many pizzas:<p>
+        <p>How many pizzas:<select name="pizzas" size="1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+          </select>
+          <p>
 
             <p><input type="submit" value="Bring me a pizza!"><input type="reset" .</p>
   </form>
