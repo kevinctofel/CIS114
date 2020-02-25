@@ -20,42 +20,47 @@
   </p>
 
   <form action="http://www.blackgoosebistro.com/pizza.php" method="POST">
-    Your Information
-    <ul>
-      <li>Name: <input type="text" name="customername"></li>
-      <li>Address: <input type="text" name="address"></li>
-      <li>Telephone Number: <input type="tel" name="telephone"></li>
-      <li>Email: <input type="email" name="email"></li>
-      <li>Delivery instructions:</li>
-      <textarea name="instructions" rows="4" cols="60" maxlength="400"
-        placeholder="No more than 400 characters long, please."></textarea>
-    </ul>
+    <fieldset>
+      <legend>Your Information</legend>
 
+      <ul>
+        <li><label for="form-name">Name: </label><input type="text" name="customername" id="form-name"></li>
+        <li><label for="form-address">Address: </label><input type="text" name="address" id="form-address"></li>
+        <li><label for="form-telephone">Number: </label><input type="tel" name="telephone"></li>
+        <li><label for="form-email">Email: </label>: <input type="email" name="email" id="form-email"></li>
+        <li><label for="form-instructions">Delivery instructions: </label></li>
+        <textarea name="instructions" rows="4" cols="60" maxlength="400"
+          placeholder="No more than 400 characters long, please." id="form-instructions"></textarea>
+      </ul>
+    </fieldset>
 
     <h2>Design Your Dream Pizza:</h2>
 
-    <p>Pizza specs<p>
-
-        <p>Crust <em>(Choose one)</em>:</p>
+    <fieldset>
+      <legend>Pizza specs</legend>
+      <fieldset>
+        <legend>Crust <em>(Choose one)</em>:</legend>
         <ul>
-          <li><input type="radio" name="crust" value="white"> Classic White</li>
-          <li><input type="radio" name="crust" value="multigrain"> Multigrain</li>
-          <li><input type="radio" name="crust" value="stuffed"> Cheese-stuffed crust</li>
-          <li><input type="radio" name="crust" value="glutenfree"> Gluten-free</li>
+          <li><label><input type="radio" name="crust" value="white"> Classic White</label></li>
+          <li><label><input type="radio" name="crust" value="multigrain"> Multigrain</label></li>
+          <li><label><input type="radio" name="crust" value="stuffed"> Cheese-stuffed crust</label></li>
+          <li><label><input type="radio" name="crust" value="glutenfree"> Gluten-free</label></li>
         </ul>
-
-        <p>Toppings <em>(Choose as many as you want)</em>:</p>
+      </fieldset>
+      <fieldset>
+        <legend>Toppings <em>(Choose as many as you want)</em>:</legend>
         <ul>
-          <li><input type="checkbox" name="toppings[]" value="red" checked> Red sauce</li>
-          <li><input type="checkbox" name="toppings[]" value="white"> White sauce</li>
-          <li><input type="checkbox" name="toppings[]" value="mozzarella"> Mozzarella Cheese</li>
-          <li><input type="checkbox" name="toppings[]" value="pepperoni"> Pepperoni</li>
-          <li><input type="checkbox" name="toppings[]" value="shrooms"> Mushrooms</li>
-          <li><input type="checkbox" name="toppings[]" value="peppers"> Peppers</li>
-          <li><input type="checkbox" name="toppings[]" value="anchovies"> Anchovies</li>
+          <li><label><input type="checkbox" name="toppings[]" value="red" checked> Red sauce</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="white"> White sauce</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="mozzarella"> Mozzarella Cheese</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="pepperoni"> Pepperoni</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="shrooms"> Mushrooms</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="peppers"> Peppers</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="anchovies"> Anchovies</label></li>
         </ul>
-
-        <p>Number</p>
+      </fieldset>
+      <fieldset>
+        <legend>Number</legend>
         <p>How many pizzas:<select name="pizzas" size="1">
             <option>1</option>
             <option>2</option>
@@ -65,8 +70,10 @@
             <option>6</option>
           </select>
           <p>
+      </fieldset>
+    </fieldset>
 
-            <p><input type="submit" value="Bring me a pizza!"><input type="reset" .</p>
+    <p><input type="submit" value="Bring me a pizza!"><input type="reset"></p>
   </form>
 </body>
 
