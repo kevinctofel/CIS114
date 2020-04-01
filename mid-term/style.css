@@ -1,9 +1,12 @@
 body {
     background-color: lightgray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
 }
 
 h1, h2 {
     text-shadow: .2em .2em .3em gray;
+    text-align: center;
 }
 
 footer {
@@ -12,7 +15,11 @@ footer {
 }
 
 .video {
+    text-align: center;
+}
 
+.featuredImage {
+    text-align: center;
 }
 
 li {
