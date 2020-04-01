@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<?xml version="1.0" standalone="no"?>
+
 <html>
 
 <head>
@@ -13,12 +12,12 @@
 
     <h1>Meet Norm, the Internet's favorite Bichon!</h2>
         <div class="featuredImage">
-            <img src="images/NormCouch.jpg"  alt="Norm sitting back on the couch" srcset="images/NormCouch-240.jpg 240w,
+            <img src="images/NormCouch.jpg" alt="Norm sitting back on the couch" srcset="images/NormCouch-240.jpg 240w,
                     images/NormCouch-480.jpg 480w,
-                    images/NormCouch-960.jpg 960w"
-                    sizes="(max-width: 480px) 100vw,
+                    images/NormCouch-960.jpg 960w" sizes="(max-width: 480px) 100vw,
                     (max-width:960px) 80vw,
                     (max-width:2160px) 80vw, 240px"></div>
+        <!-- Responsive image sizing-->
         <h2>Amazing Norm facts:</h2>
         <ul>
             <li>Norm is a rescue dog that we took in as a puppy back in 2012.</li>
@@ -30,6 +29,8 @@
         </ul>
         <div class="video">
             <video controls src="media/JoyousNorm.mp4" width="50%"></video>
+            <!-- Should really have converted this to other formats but mp4 is 
+            fairly well supported -->
         </div>
         <h2>Norm's weekly schedule</h2>
         <div class="table">
@@ -104,15 +105,16 @@
         <div class="featuredImage">
             <img src="images/NormGlasses.jpg" width="80%" alt="Norm with glasses" srcset="images/NormGlasses-240.jpg 240w,
             images/NormGlasses-480.jpg 480w,
-            images/NormGlasses-960.jpg 960w"
-            sizes="(max-width: 480px) 100vw,
+            images/NormGlasses-960.jpg 960w" sizes="(max-width: 480px) 100vw,
             (max-width:960px) 80vw,
-            (max-width:2160px) 80vw, 240px"></div>
+            (max-width:2160px) 80vw, 240px" <!-- Responsive image sizing-->
+        </div>
 </body>
 <footer>
     <p>To book Norm on your TV show, video podcast, or event, please contact his manager
         <a href="mailto:kctofel@gmail.com?Subject=Booking%20Request%20for%20Norm">by email</a> or <a
             href="tel:18008675309">by phone.</a>
+            <!-- Included autofill subject line -->
     </p>
 </footer>
 
