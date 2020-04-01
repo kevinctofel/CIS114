@@ -21,6 +21,9 @@ footer {
 .featuredImage {
     text-align: center;
 }
+.comments {
+    text-align: center;
+}
 
 li {
     list-style: none;
