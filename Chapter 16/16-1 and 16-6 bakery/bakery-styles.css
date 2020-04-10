@@ -56,11 +56,23 @@ nav ul li a:focus, nav ul li a:hover, nav ul li a:active {
 }
 nav ul {
   margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
 }
 nav ul li {
    font-size: .8em;
   text-transform: uppercase;
   letter-spacing: .2em;
+}
+
+nav ul li a{
+  display: block;
+  border: 1px solid;
+  border-radius: .5em;
+  padding: .5em 1em;
+  margin: .5em;
 }
 
 /* main "products" styles */
