@@ -8,22 +8,13 @@
 <body>
 
 	<script>
-		var friends = ["Paul", "George", "John", "Ringo"];
-		alert(friends[2]);
-		var name = "Kevin";
-		if (name == "Jennifer") {
-			alert("That's my name too!");
+		var originalTitle = document.title;
+
+		function showUnreadCount(unread) {
+			document.title = originalTitle + " (" + unread + " new messages!)";
 		}
-		else {
-			alert("Hi " + name + ". My name is Jennifer.")
-		}
-		var myVariable = 7;
-		if (myVariable > 5) {
-			alert("Upper");
-		}
-		else {
-			alert("Lower");
-		}
+
+		showUnreadCount(3);
 
 	</script>
 </body>
