@@ -4,36 +4,24 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Oh Norm!</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
-
-    <h1>Meet Norm, the Internet's favorite Bichon!</h2>
+<body><div id="container">
+    <header>
+    <h1>Meet Norm, the Internet's favorite Bichon!</h1></header>
+    <div id="content">
         <div class="featuredImage">
-            <img src="images/NormCouch.jpg" alt="Norm sitting back on the couch" srcset="images/NormCouch-240.jpg 240w,
-                    images/NormCouch-480.jpg 480w,
-                    images/NormCouch-960.jpg 960w" sizes="(max-width: 480px) 100vw,
-                    (max-width:960px) 80vw,
-                    (max-width:2160px) 80vw, 240px"></div>
+            <img src="images/NormCouch-960.jpg" alt="Norm sitting back on the couch" width=600px> 
+                    </div>
         <!-- Responsive image sizing-->
-        <h2>Amazing Norm facts:</h2>
-        <ul>
-            <li>Norm is a rescue dog that we took in as a puppy back in 2012.</li>
-            <li>He came with his name, but we never even thought about changing it. Because: NORM!</li>
-            <li>He thinks he's a big dog. We think he's a barking cat. &#128540;</li>
-            <li>Norm has his own <a href="https://photos.app.goo.gl/DRv4ARNwvm6We5Ed8">
-                    public Google Photos album</a>.</li>
-            <li>When we come home, Norm actually dances with joy!</li>
-        </ul>
-        <div class="video">
-            <video controls src="media/JoyousNorm.mp4" width="50%"></video>
-            <!-- Should really have converted this to other formats but mp4 is 
-            fairly well supported -->
-        </div>
-        <h2>Norm's weekly schedule</h2>
+        
+     
         <div class="table">
+        <h2>Norm's weekly schedule</h2>
+ 
             <table class="greyGridTable">
                 <caption>Daily activities</caption>
                 <thead>
@@ -102,15 +90,83 @@
             </form>
         </fieldset>
         <br>
-        <div class="featuredImage">
-            <img src="images/NormGlasses.jpg" width="80%" alt="Norm with glasses" srcset="images/NormGlasses-240.jpg 240w,
-            images/NormGlasses-480.jpg 480w,
-            images/NormGlasses-960.jpg 960w" sizes="(max-width: 480px) 100vw,
-            (max-width:960px) 80vw,
-            (max-width:2160px) 80vw, 240px" <!-- Responsive image sizing-->
+    </div>
+ 
+
+        <div id="facts">
+            <h2>Amazing Norm facts:</h2>
+            <ul>
+                <li>Norm is a rescue dog that we took in as a puppy back in 2012.</li>
+                <li>He came with his name, but we never even thought about changing it. Because: NORM!</li>
+                <li>He thinks he's a big dog. We think he's a barking cat. &#128540;</li>
+                <li>Norm has his own <a href="https://photos.app.goo.gl/DRv4ARNwvm6We5Ed8">
+                        public Google Photos album</a>.</li>
+                <li>When we come home, Norm actually dances with joy!</li>
+            </ul>
+            <div class="video">
+                <video controls src="media/JoyousNorm.mp4" width="100%"></video>
+                <!-- Should really have converted this to other formats but mp4 is 
+                fairly well supported -->
+            </div> 
+        </div>
+        <div id="crypto">
+            <div class="featuredImage2">
+                <img src="images/NormGlasses.jpg" width="80%" alt="Norm with glasses" srcset="images/NormGlasses-240.jpg 240w,
+                images/NormGlasses-480.jpg 480w,
+                images/NormGlasses-960.jpg 960w" sizes="(max-width: 480px) 100vw,
+                (max-width:960px) 80vw,
+                (max-width:2160px) 80vw, 240px">
+            </div>
+            <h2>Track crypto coins with Norm!</h2>
+            <form>
+              <label form="coin">Choose a cryptocurrency:</label>
+              <select id="coin" name="coins">
+                <option value="DOGE">Dogecoin</option>
+                <option value="BTC">Bitcoin</option>
+                <option value="LTC">Litecoin</option>
+                <option value="ETC">Etherium</option>
+                <input type="button" value="Submit" onclick="printCoin()">
+                <input type="reset" onclick="location.reload()">
+              </select>
+            </form>
+            <p id="choice"></p>
+            <p id="choicePrice"></p>
+        
+            <script>
+              function printCoin() {
+                currency = document.querySelector('#coin');
+                console.log(currency.value);
+                document.getElementById("choice").innerHTML = "You chose: " + currency.value;
+                getPrice(currency);
+              }
+          
+              function getPrice(currency) {
+                let requestURL = 'https://min-api.cryptocompare.com/data/price?fsym=' + currency.value + '&tsyms=USD&api_key=e29b700b7cfd70faa0de907743ea4e186cd2e1f2f3b999332f7718be49feb6ae';
+                var request = new XMLHttpRequest();
+                request.open('GET', requestURL, true);
+                request.responseType = 'text';
+                request.send();
+                request.onload = function () {
+                  if (request.readyState === request.DONE) {
+                    var coinPrice = request.responseText;
+                    // console.log(coinPrice);
+                    var coinPriceData = [].slice.call(coinPrice)
+                    // console.log(coinPriceData);
+                    var i;
+                    var currentValueUSD = "";
+                    for (i = 7; i < (coinPriceData.length-1); i++) {
+                      currentValueUSD = currentValueUSD + coinPriceData[i];
+                    }
+                  }
+                  document.getElementById("choicePrice").innerHTML = "Current price is: $" + currentValueUSD;
+                }
+              }
+          
+            </script>
+
         </div>
 </body>
-<footer>
+<footer id="footer">
     <p>To book Norm on your TV show, video podcast, or event, please contact his manager
         <a href="mailto:kctofel@gmail.com?Subject=Booking%20Request%20for%20Norm">by email</a> or <a
             href="tel:18008675309">by phone.</a>
