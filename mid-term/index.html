@@ -9,89 +9,96 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body><div id="container">
-    <header>
-    <h1>Meet Norm, the Internet's favorite Bichon!</h1></header>
-    <div id="content">
-        <div class="featuredImage">
-            <img src="images/NormCouch-960.jpg" alt="Norm sitting back on the couch" width=600px> 
+<body onload="daysSinceHaircut()">
+    <div id="container">
+        <header>
+            <h1>Meet Norm, the Internet's favorite Bichon!</h1>
+        </header>
+        <div id="content">
+            <div class="featuredImage">
+                <img src="images/NormCouch-960.jpg" alt="Norm sitting back on the couch" width=600px>
+            </div>
+            <!-- Responsive image sizing-->
+
+
+            <div class="table">
+                <h2>Norm's weekly schedule</h2>
+
+                <table class="greyGridTable">
+                    <caption>Daily activities</caption>
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Eat</td>
+                            <td>Eat</td>
+                            <td>Eat</td>
+                            <td>Eat</td>
+                            <td>Eat</td>
+                            <td>Eat</td>
+                            <td>Chase cats</td>
+                        </tr>
+                        <tr>
+                            <td>Nap</td>
+                            <td>Walk</td>
+                            <td>Email</td>
+                            <td>Nap</td>
+                            <td>Walk</td>
+                            <td>Visit Gus</td>
+                            <td>Nap</td>
+                        </tr>
+                        <tr>
+                            <td>Walk</td>
+                            <td>Nap</td>
+                            <td>Netflix</td>
+                            <td>Walk</td>
+                            <td>Bath</td>
+                            <td>Walk</td>
+                            <td>Eat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <fieldset>
+                <legend>Engage with Norm!</legend>
+                <form action="submit.php" method="POST">
+                    <h2>Which of Norm's days would you like to see on video? <input type="text" list="faveDay"
+                            name="faveDay"></h2>
+                    <datalist id="faveDay">
+                        <option value="Sunday"></option>
+                        <option value="Monday"></option>
+                        <option value="Tuesday"></option>
+                        <option value="Wednesday"></option>
+                        <option value="Thursday"></option>
+                        <option value="Friday"></option>
+                        <option value="Saturday"></option>
+                    </datalist>
+                    <div class="comments">
+                        <p>Send your comments to Norm!<br>
+                            Norm reads each and every message. He thanks you for your comment.<br>
+                            <textarea name="fanComment" placeholder="50 words or less; Norm doesn't know many words!"
+                                rows="3" cols="60"></textarea></p>
+                        <p><input type="submit" value="Submit choices"><input type="reset"></p>
                     </div>
-        <!-- Responsive image sizing-->
-        
-     
-        <div class="table">
-        <h2>Norm's weekly schedule</h2>
- 
-            <table class="greyGridTable">
-                <caption>Daily activities</caption>
-                <thead>
-                    <tr>
-                        <th>Sun</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Eat</td>
-                        <td>Eat</td>
-                        <td>Eat</td>
-                        <td>Eat</td>
-                        <td>Eat</td>
-                        <td>Eat</td>
-                        <td>Chase cats</td>
-                    </tr>
-                    <tr>
-                        <td>Nap</td>
-                        <td>Walk</td>
-                        <td>Email</td>
-                        <td>Nap</td>
-                        <td>Walk</td>
-                        <td>Visit Gus</td>
-                        <td>Nap</td>
-                    </tr>
-                    <tr>
-                        <td>Walk</td>
-                        <td>Nap</td>
-                        <td>Netflix</td>
-                        <td>Walk</td>
-                        <td>Bath</td>
-                        <td>Walk</td>
-                        <td>Eat</td>
-                    </tr>
-                </tbody>
-            </table>
+                </form>
+            </fieldset>
+            <br>
+            <div style="text-align:center">
+            <h2>Days since Norm got a haircut</h2>
+            <p id="haircut"></p>
+            </div>  
+
         </div>
-        <fieldset>
-            <legend>Engage with Norm!</legend>
-            <form action="submit.php" method="POST">
-                <h2>Which of Norm's days would you like to see on video? <input type="text" list="faveDay"
-                        name="faveDay"></h2>
-                <datalist id="faveDay">
-                    <option value="Sunday"></option>
-                    <option value="Monday"></option>
-                    <option value="Tuesday"></option>
-                    <option value="Wednesday"></option>
-                    <option value="Thursday"></option>
-                    <option value="Friday"></option>
-                    <option value="Saturday"></option>
-                </datalist>
-                <div class="comments">
-                    <p>Send your comments to Norm!<br>
-                        Norm reads each and every message. He thanks you for your comment.<br>
-                        <textarea name="fanComment" placeholder="50 words or less; Norm doesn't know many words!"
-                            rows="3" cols="60"></textarea></p>
-                    <p><input type="submit" value="Submit choices"><input type="reset"></p>
-                </div>
-            </form>
-        </fieldset>
-        <br>
-    </div>
- 
+
 
         <div id="facts">
             <h2>Amazing Norm facts:</h2>
@@ -107,7 +114,7 @@
                 <video controls src="media/JoyousNorm.mp4" width="100%"></video>
                 <!-- Should really have converted this to other formats but mp4 is 
                 fairly well supported -->
-            </div> 
+            </div>
         </div>
         <div id="crypto">
             <div class="featuredImage2">
@@ -119,49 +126,55 @@
             </div>
             <h2>Track crypto coins with Norm!</h2>
             <form>
-              <label form="coin">Choose a cryptocurrency:</label>
-              <select id="coin" name="coins">
-                <option value="DOGE">Dogecoin</option>
-                <option value="BTC">Bitcoin</option>
-                <option value="LTC">Litecoin</option>
-                <option value="ETC">Etherium</option>
-                <input type="button" value="Submit" onclick="printCoin()">
-                <input type="reset" onclick="location.reload()">
-              </select>
+                <label form="coin">Choose a cryptocurrency:</label>
+                <select id="coin" name="coins">
+                    <option value="DOGE">Dogecoin</option>
+                    <option value="BTC">Bitcoin</option>
+                    <option value="LTC">Litecoin</option>
+                    <option value="ETC">Etherium</option>
+                    <input type="button" value="Submit" onclick="printCoin()">
+                    <input type="reset" onclick="location.reload()">
+                </select>
             </form>
             <p id="choice"></p>
             <p id="choicePrice"></p>
-        
+
             <script>
-              function printCoin() {
-                currency = document.querySelector('#coin');
-                console.log(currency.value);
-                document.getElementById("choice").innerHTML = "You chose: " + currency.value;
-                getPrice(currency);
-              }
-          
-              function getPrice(currency) {
-                let requestURL = 'https://min-api.cryptocompare.com/data/price?fsym=' + currency.value + '&tsyms=USD&api_key=e29b700b7cfd70faa0de907743ea4e186cd2e1f2f3b999332f7718be49feb6ae';
-                var request = new XMLHttpRequest();
-                request.open('GET', requestURL, true);
-                request.responseType = 'text';
-                request.send();
-                request.onload = function () {
-                  if (request.readyState === request.DONE) {
-                    var coinPrice = request.responseText;
-                    // console.log(coinPrice);
-                    var coinPriceData = [].slice.call(coinPrice)
-                    // console.log(coinPriceData);
-                    var i;
-                    var currentValueUSD = "";
-                    for (i = 7; i < (coinPriceData.length-1); i++) {
-                      currentValueUSD = currentValueUSD + coinPriceData[i];
-                    }
-                  }
-                  document.getElementById("choicePrice").innerHTML = "Current price is: $" + currentValueUSD;
+                function printCoin() {
+                    currency = document.querySelector('#coin');
+                    console.log(currency.value);
+                    document.getElementById("choice").innerHTML = "You chose: " + currency.value;
+                    getPrice(currency);
                 }
-              }
-          
+
+                function getPrice(currency) {
+                    let requestURL = 'https://min-api.cryptocompare.com/data/price?fsym=' + currency.value + '&tsyms=USD&api_key=e29b700b7cfd70faa0de907743ea4e186cd2e1f2f3b999332f7718be49feb6ae';
+                    var request = new XMLHttpRequest();
+                    request.open('GET', requestURL, true);
+                    request.responseType = 'text';
+                    request.send();
+                    request.onload = function () {
+                        if (request.readyState === request.DONE) {
+                            var coinPrice = request.responseText;
+                            // console.log(coinPrice);
+                            var coinPriceData = [].slice.call(coinPrice)
+                            // console.log(coinPriceData);
+                            var i;
+                            var currentValueUSD = "";
+                            for (i = 7; i < (coinPriceData.length - 1); i++) {
+                                currentValueUSD = currentValueUSD + coinPriceData[i];
+                            }
+                        }
+                        document.getElementById("choicePrice").innerHTML = "Current price is: $" + currentValueUSD;
+                    }
+                }
+
+                function daysSinceHaircut() {
+                    var current = new Date(new Date().getTime());
+                    var previous = new Date("03/10/2020");
+                    var numDays = Math.ceil((current - previous + 1) / 86400000);
+                    document.getElementById("haircut").innerHTML = "It's been " + numDays + " since his haircut due to the pandemic!";
+                }
             </script>
 
         </div>
@@ -170,7 +183,7 @@
     <p>To book Norm on your TV show, video podcast, or event, please contact his manager
         <a href="mailto:kctofel@gmail.com?Subject=Booking%20Request%20for%20Norm">by email</a> or <a
             href="tel:18008675309">by phone.</a>
-            <!-- Included autofill subject line -->
+        <!-- Included autofill subject line -->
     </p>
 </footer>
 
